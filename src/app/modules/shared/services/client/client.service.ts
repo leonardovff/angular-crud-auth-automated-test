@@ -27,4 +27,21 @@ export class ClientService {
       )
       .toPromise();
   }
+  edit(id: number, data): Promise<any>{
+    this.isLoading = true;
+    return this.http.patch(`@rhi-api/${this.endpoint}/${id}`, data)
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
+      .toPromise();
+  }
+
+  create(data): Promise<any>{
+    this.isLoading = true;
+    return this.http.post(`@rhi-api/${this.endpoint}`, data)
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
+      .toPromise();
+  }
 }

@@ -6,10 +6,11 @@ import { ClientListComponent } from './components/client-list/client-list.compon
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientViewComponent } from './components/client-view/client-view.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
 
 
 @NgModule({
-  declarations: [ClientListComponent, ClientViewComponent],
+  declarations: [ClientListComponent, ClientViewComponent, ClientFormComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

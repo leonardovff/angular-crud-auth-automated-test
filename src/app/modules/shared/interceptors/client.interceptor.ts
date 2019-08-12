@@ -42,7 +42,7 @@ export class ClientInterceptor implements HttpInterceptor {
       }
 
       // edit client by id
-      if (request.url.match(/\/clients\/\d+$/) && request.method === 'POST') {
+      if (request.url.match(/\/clients\/\d+$/) && request.method === 'PATCH') {
         // check for fake auth token in header and return client if valid, this security is implemented server side in a real application
         // find client by id in clients array
         let urlParts = request.url.split('/');

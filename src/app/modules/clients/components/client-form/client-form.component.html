@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+  <legend for="name">Nome</legend>
+  <input type="text" id="name" formControlName='name'
+    maxlength="100">
+
+  <legend for="cpf">CPF</legend>
+  <input type="text" formControlName='cpf'
+    id="cpf" appCpfMask maxlength="14">
+
+  <legend for="phone">TELEFONE</legend>
+  <input type="text" formControlName='phone' id="phone"
+    maxlength="100">
+
+  <legend for="birth_date">DATA DE NASCIMENTO</legend>
+  <input type="text" formControlName='birth_date'
+    maxlength="100">
+
+  <legend for="address">ENDEREÇO</legend>
+  <input type="text" formControlName='address'
+    maxlength="100">
+
+  <legend for="vehicle_brand">MARCA DO VEICULO</legend>
+  <input type="text" formControlName='vehicle_brand'
+    maxlength="100">
+
+  <legend for="vehicle_model">MODELO DO VEICULO</legend>
+  <input type="text" formControlName='vehicle_model'
+    maxlength="100">
+  <button type="submit" [disabled]="form.invalid">SALVAR</button>
+</form>
