@@ -56,7 +56,7 @@ describe('ClientService', () => {
       expect:  {
         loadFlagInStart: true,
         loadFlagInEnd: false,
-        student: {
+        client: {
           "id": 2,
           "name": "Christian Mcguire",
           "cpf": "975.073.450-50",
@@ -78,7 +78,7 @@ describe('ClientService', () => {
     service
       .getById(arrage.input)
       .then((data) => {
-        expect(JSON.stringify(data)).toBe(JSON.stringify(arrage.expect.student));
+        expect(JSON.stringify(data)).toBe(JSON.stringify(arrage.expect.client));
         // verify isLoading flag
         expect(service.isLoading).toBe(arrage.expect.loadFlagInEnd);
         done();

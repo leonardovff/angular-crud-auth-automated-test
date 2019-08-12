@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../../shared/services/client/client.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-client-list',
@@ -8,7 +9,9 @@ import { ClientService } from '../../../shared/services/client/client.service';
 })
 export class ClientListComponent implements OnInit {
   users: Array<any>;
-  constructor(private client: ClientService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private client: ClientService) { }
 
   ngOnInit() {
     this.loadData();
@@ -16,9 +19,10 @@ export class ClientListComponent implements OnInit {
   loadData(){
     this.client
       .loadClients()
-      .then(data =>
+      .then(data => {
+        console.log(data);
         this.users = data
-      )
+      });
   }
 
 }
