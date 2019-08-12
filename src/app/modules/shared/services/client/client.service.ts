@@ -19,4 +19,12 @@ export class ClientService {
       )
       .toPromise();
   }
+  getById(id: number): Promise<any>{
+    this.isLoading = true;
+    return this.http.get(`@rhi-api/${this.endpoint}/${id}`)
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
+      .toPromise();
+  }
 }

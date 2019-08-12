@@ -1,6 +1,6 @@
 import { ClientInterface } from 'src/app/interfaces/client.interface';
 
-export let Clients: Array<ClientInterface> = [
+export let ClientsData: Array<ClientInterface> = [
   {
     "id": 1,
     "name": "Lora Middleton",
