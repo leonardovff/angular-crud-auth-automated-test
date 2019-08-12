@@ -1,0 +1,8 @@
+<rhi-ui-list>
+  <rhi-ui-list-item
+    *ngFor="let user of users"
+    [route]="'./'+user.id"
+    title="link to user">
+    {{user?.name}}
+  </rhi-ui-list-item>
+</rhi-ui-list>

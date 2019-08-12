@@ -1,0 +1,6 @@
+:host{
+  font-family: "Rogan";
+}
+:host >>> [rhi-ui-list-item]{
+  width: 80%;
+}
