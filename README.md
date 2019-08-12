@@ -3,6 +3,7 @@
 ## DOCUMENTATION OF PROJECT
 
 [Angular Architecture](https://drive.google.com/file/d/1jPW6tEpjx3xykWmq6nkBacMW0H3VKfwV/view?usp=sharing)
+
 [UX/UI Prototype](https://xd.adobe.com/spec/f9f72e8e-208c-4217-6710-dd616c12b68c-8fc6/screen/2b49ac6f-cd39-4055-97ff-8a14bf31e2de/list)
 
 ## Development server
