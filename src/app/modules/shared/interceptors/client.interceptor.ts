@@ -53,10 +53,7 @@ export class ClientInterceptor implements HttpInterceptor {
             flag = true;
             return {
               id: id,
-              name: request.body.name,
-              email: request.body.email,
-              password: request.body.password,
-              phone: request.body.phone
+              ...request.body
             }
           }
           return client;
