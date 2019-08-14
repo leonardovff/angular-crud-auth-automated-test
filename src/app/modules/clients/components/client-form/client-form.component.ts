@@ -38,18 +38,18 @@ export class ClientFormComponent implements OnInit {
         Validators.minLength(5),
         Validators.maxLength(100)
       ]),
-      vehicle_brand: new FormControl(null, [
-        Validators.required,
-      ]),
-      vehicle_model: new FormControl(null, [
-        Validators.required,
-      ])
+      // vehicle_brand: new FormControl(null, [
+      //   Validators.required,
+      // ]),
+      // vehicle_model: new FormControl(null, [
+      //   Validators.required,
+      // ])
     });
 
   }
 
   ngOnInit() {
-    this.id = this.activatedRoute.snapshot.params.id
+    this.id = this.activatedRoute.snapshot.params.id;
     if(this.id){
       this.service.getById(this.id)
         .then(data => {
@@ -58,15 +58,16 @@ export class ClientFormComponent implements OnInit {
     }
   }
   save() {
+
     if(this.id){
-      return this.service.edit(this.id, this.form.value)
+      return this.service.update(this.id, this.form.value)
         .then(()=>{
-          alert("Foi");
-          this.router.navigateByUrl('./../');
-        });
+        alert("Foi");
+        this.router.navigateByUrl('./../');
+      });
     }
 
-    return this.service.create(this.form.value)
+    this.service.create(this.form.value)
       .then(()=>{
         alert("Foi");
         this.router.navigateByUrl('./../');

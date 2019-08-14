@@ -20,6 +20,7 @@ export class ClientService {
       .toPromise();
   }
   getById(id: number): Promise<any>{
+    console.log(id, 'get');
     this.isLoading = true;
     return this.http.get(`@rhi-api/${this.endpoint}/${id}`)
       .pipe(
@@ -27,7 +28,8 @@ export class ClientService {
       )
       .toPromise();
   }
-  edit(id: number, data): Promise<any>{
+  update(id: number, data): Promise<any>{
+    console.log(data, 'update');
     this.isLoading = true;
     return this.http.patch(`@rhi-api/${this.endpoint}/${id}`, data)
       .pipe(
@@ -37,6 +39,7 @@ export class ClientService {
   }
 
   create(data): Promise<any>{
+    console.log(data, 'create');
     this.isLoading = true;
     return this.http.post(`@rhi-api/${this.endpoint}`, data)
       .pipe(
