@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CpfValidator } from 'src/app/validators/cpf.validator';
-import { ClientService } from 'src/app/modules/shared/services/client/client.service';
+import { ClientService } from 'src/app/services/client/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

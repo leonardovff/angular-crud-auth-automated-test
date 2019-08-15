@@ -5,7 +5,7 @@ import { ListItemComponent } from 'src/app/modules/shared/components/list/list-i
 import { ListComponent } from 'src/app/modules/shared/components/list/list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { ClientService } from 'src/app/modules/shared/services/client/client.service';
+import { ClientService } from 'src/app/services/client/client.service';
 import { of } from 'rxjs';
 import { ClientsData } from '../../../shared/interceptors/client-data'
 import { By } from '@angular/platform-browser';

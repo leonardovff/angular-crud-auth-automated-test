@@ -4,7 +4,7 @@ import { ClientFormComponent } from './client-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ClientService } from 'src/app/modules/shared/services/client/client.service';
+import { ClientService } from 'src/app/services/client/client.service';
 import { ActivatedRoute } from '@angular/router';
 import { format } from 'util';
 import { By } from '@angular/platform-browser';

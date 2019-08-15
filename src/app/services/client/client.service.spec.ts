@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { ClientService } from './client.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ClientInterceptor } from '../../interceptors/client.interceptor';
-import { ClientsData } from './../../interceptors/client-data';
+import { ClientInterceptor } from '../../modules/shared/interceptors/client.interceptor';
+import { ClientsData } from '../../modules/shared/interceptors/client-data';
 
 describe('ClientService', () => {
   beforeEach(() => TestBed.configureTestingModule({
