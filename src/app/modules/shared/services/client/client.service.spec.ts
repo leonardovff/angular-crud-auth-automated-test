@@ -50,7 +50,7 @@ describe('ClientService', () => {
     // verify isLoading flag
     expect(service.isLoading).toBe(arrage.expect.loadFlagInStart);
   });
-  it('should save return a client by id', (done: DoneFn) => {
+  it('should return a client by id', (done: DoneFn) => {
     const arrage = {
       input: 2,
       expect:  {
@@ -85,6 +85,10 @@ describe('ClientService', () => {
       });
       // verify isLoading flag
       expect(service.isLoading).toBe(arrage.expect.loadFlagInStart);
+  });
 
+  it('should update a client', (done: DoneFn) => {
+  });
+  it('should delete a client', (done: DoneFn) => {
   });
 });
