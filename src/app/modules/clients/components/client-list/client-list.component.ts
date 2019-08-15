@@ -11,7 +11,8 @@ export class ClientListComponent implements OnInit {
   users: Array<any>;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private client: ClientService) { }
+    private client: ClientService
+  ) { }
 
   ngOnInit() {
     this.loadData();
@@ -20,7 +21,6 @@ export class ClientListComponent implements OnInit {
     this.client
       .loadClients()
       .then(data => {
-        console.log(data);
         this.users = data
       });
   }

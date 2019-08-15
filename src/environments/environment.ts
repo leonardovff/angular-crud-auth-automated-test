@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  vehicle_api: "//parallelum.com.br/fipe/api/v1/",
   production: false
 };
 
