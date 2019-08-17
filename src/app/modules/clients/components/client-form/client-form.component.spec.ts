@@ -16,6 +16,7 @@ import { VehicleBrands } from 'src/app/services/vehicle/vehicle-data';
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
 import { CpfMaskDirective } from 'src/app/modules/shared/directives/cpf-mask.directive';
 import { PhoneMaskDirective } from 'src/app/modules/shared/directives/phone-mask.directive';
+import { BirthDateMaskDirective } from 'src/app/modules/shared/directives/birth-date-mask.directive';
 
 class mockVehicleService {
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
@@ -45,7 +46,8 @@ describe('ClientFormComponent', () => {
       declarations: [
         ClientFormComponent,
         CpfMaskDirective,
-        PhoneMaskDirective
+        PhoneMaskDirective,
+        BirthDateMaskDirective
       ],
       imports: [
         ReactiveFormsModule,
@@ -88,7 +90,7 @@ describe('ClientFormComponent', () => {
           name: "Guilherme Silveira",
           cpf: "74757602863",
           phone: "85996437412",
-          birth_date: "19610423",
+          birth_date: "23041961",
           address: "Rua Machado de Assis",
           vehicle_brand: 3,
           vehicle_model: 12,
@@ -99,7 +101,7 @@ describe('ClientFormComponent', () => {
           name: "Guilherme Silveira",
           cpf: "747.576.028-63",
           phone: "(85) 99643-7412",
-          birth_date: "1961-04-23",
+          birth_date: "23/04/1961",
           address: "Rua Machado de Assis",
           vehicle_brand: {
             id: 3,
