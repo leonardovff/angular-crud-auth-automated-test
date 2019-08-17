@@ -6,7 +6,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Lora Middleton",
     "cpf": "173.676.730-50",
     "phone": "(55) 99830-4962 ",
-    "birth_date": "1999-9-3",
+    "birth_date": "1999-09-03",
     "address": "Livingston Street, 579",
     "vehicle_brand": {
       "id": 56,
@@ -22,7 +22,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Christian Mcguire",
     "cpf": "975.073.450-50",
     "phone": "(82) 98858-4743 ",
-    "birth_date": "2000-1-24",
+    "birth_date": "2000-01-24",
     "address": "Veronica Place, 663",
     "vehicle_brand": {
       "id": 59,
@@ -38,7 +38,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Berta Mejia",
     "cpf": "173.676.730-50",
     "phone": "(85) 99933-5513 ",
-    "birth_date": "1969-8-8",
+    "birth_date": "1969-08-08",
     "address": "Montgomery Place, 300",
     "vehicle_brand": {
       "id": 59,
@@ -70,7 +70,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Courtney Decker",
     "cpf": "473.760.520-46",
     "phone": "(83) 98804-4192 ",
-    "birth_date": "1989-5-2",
+    "birth_date": "1989-05-02",
     "address": "Will Place, 364",
     "vehicle_brand": {
       "id": 56,
@@ -118,7 +118,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Lancaster Hendricks",
     "cpf": "011.969.430-10",
     "phone": "(12) 99911-5763 ",
-    "birth_date": "1962-2-13",
+    "birth_date": "1962-02-13",
     "address": "Paerdegat Avenue, 312",
     "vehicle_brand": {
       "id": 59,
@@ -134,7 +134,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Lakeisha Davenport",
     "cpf": "173.676.730-50",
     "phone": "(74) 98989-4623 ",
-    "birth_date": "1972-6-7",
+    "birth_date": "1972-06-07",
     "address": "Schenck Street, 924",
     "vehicle_brand": {
       "id": 56,
@@ -150,7 +150,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Payne Mccullough",
     "cpf": "198.317.840-30",
     "phone": "(91) 99905-4373 ",
-    "birth_date": "1995-8-18",
+    "birth_date": "1995-08-18",
     "address": "Merit Court, 648",
     "vehicle_brand": {
       "id": 56,
@@ -166,7 +166,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Lucas Sutton",
     "cpf": "473.760.520-46",
     "phone": "(49) 99964-5623 ",
-    "birth_date": "1999-7-1",
+    "birth_date": "1999-07-01",
     "address": "Portal Street, 235",
     "vehicle_brand": {
       "id": 59,
@@ -182,7 +182,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Gentry Marshall",
     "cpf": "930.631.350-03",
     "phone": "(62) 99873-5223 ",
-    "birth_date": "1971-4-7",
+    "birth_date": "1971-04-07",
     "address": "Prescott Place, 580",
     "vehicle_brand": {
       "id": 59,
@@ -198,7 +198,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Shelia Lynn",
     "cpf": "198.317.840-30",
     "phone": "(42) 98858-5313 ",
-    "birth_date": "1976-4-10",
+    "birth_date": "1976-04-10",
     "address": "Olive Street, 657",
     "vehicle_brand": {
       "id": 47,
@@ -214,7 +214,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Naomi Hammond",
     "cpf": "811.127.880-26",
     "phone": "(64) 99868-5262 ",
-    "birth_date": "1994-7-25",
+    "birth_date": "1994-07-25",
     "address": "Ivan Court, 741",
     "vehicle_brand": {
       "id": 59,
@@ -246,7 +246,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Gill Woodward",
     "cpf": "198.317.840-30",
     "phone": "(94) 99833-4593 ",
-    "birth_date": "1983-4-12",
+    "birth_date": "1983-04-12",
     "address": "Bay Parkway, 789",
     "vehicle_brand": {
       "id": 59,
@@ -262,7 +262,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Harrison Witt",
     "cpf": "173.676.730-50",
     "phone": "(95) 98930-5852 ",
-    "birth_date": "1988-9-3",
+    "birth_date": "1988-09-03",
     "address": "Bayview Avenue, 670",
     "vehicle_brand": {
       "id": 56,
@@ -294,7 +294,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Underwood Greene",
     "cpf": "975.073.450-50",
     "phone": "(44) 99947-5352 ",
-    "birth_date": "1961-6-25",
+    "birth_date": "1961-06-25",
     "address": "Lewis Place, 201",
     "vehicle_brand": {
       "id": 56,
@@ -310,7 +310,7 @@ export let ClientsData: Array<ClientInterface> = [
     "name": "Michael Ratliff",
     "cpf": "198.317.840-30",
     "phone": "(83) 99893-4192 ",
-    "birth_date": "1972-6-11",
+    "birth_date": "1972-06-11",
     "address": "Herkimer Court, 492",
     "vehicle_brand": {
       "id": 47,

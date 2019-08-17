@@ -61,7 +61,7 @@ describe('ClientService', () => {
           "name": "Christian Mcguire",
           "cpf": "975.073.450-50",
           "phone": "(82) 98858-4743 ",
-          "birth_date": "2000-1-24",
+          "birth_date": "24/01/2000",
           "address": "Veronica Place, 663",
           "vehicle_brand": {
             "id": 59,
@@ -78,7 +78,7 @@ describe('ClientService', () => {
     service
       .getById(arrage.input)
       .then((data) => {
-        expect(JSON.stringify(data)).toBe(JSON.stringify(arrage.expect.client));
+        expect(data).toEqual(arrage.expect.client);
         // verify isLoading flag
         expect(service.isLoading).toBe(arrage.expect.loadFlagInEnd);
         done();
@@ -87,8 +87,8 @@ describe('ClientService', () => {
       expect(service.isLoading).toBe(arrage.expect.loadFlagInStart);
   });
 
-  it('should update a client', (done: DoneFn) => {
-  });
-  it('should delete a client', (done: DoneFn) => {
-  });
+  // it('should update a client', (done: DoneFn) => {
+  // });
+  // it('should delete a client', (done: DoneFn) => {
+  // });
 });
