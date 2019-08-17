@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ClientInterceptor } from './interceptors/client.interceptor';
 import { CpfMaskDirective } from './directives/cpf-mask.directive';
 import { PhoneMaskDirective } from './directives/phone-mask.directive';
+import { BirthDateMaskDirective } from './directives/birth-date-mask.directive';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PhoneMaskDirective } from './directives/phone-mask.directive';
     ListComponent,
     ListItemComponent,
     CpfMaskDirective,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    BirthDateMaskDirective
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { PhoneMaskDirective } from './directives/phone-mask.directive';
     ListComponent,
     ListItemComponent,
     CpfMaskDirective,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    BirthDateMaskDirective
   ],
   providers: [
     {
