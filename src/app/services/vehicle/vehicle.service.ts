@@ -14,9 +14,9 @@ export class VehicleService {
   public isLoadingModelData: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
   constructor(private http: HttpClient) {
-    this.loadBrands.then();
+    this.loadBrands();
   }
-  private loadBrands: Promise<Array<VehicleModelInterface>> = new Promise((res) => {
+  private loadBrands(): void {
     this.isLoadingModelData.next(true);
     this.http.get(this.endpoint)
       .pipe(
@@ -27,11 +27,10 @@ export class VehicleService {
         })))
       )
       .subscribe(data => {
-        res(data);
         this.brands.next(data);
         this.isLoadingModelData.next(false);
       });
-  });
+  };
 
   public loadAndGetModels(brand_id: number): Promise<Array<VehicleModelInterface>> {
     return this.http.get(`${this.endpoint}/${brand_id}/modelos`)
