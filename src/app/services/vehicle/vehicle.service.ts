@@ -11,29 +11,13 @@ import { retry, map } from 'rxjs/operators';
 })
 export class VehicleService {
   private endpoint: string = environment.vehicle_api + "carros/marcas";
-  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public isLoadingModelData: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
   constructor(private http: HttpClient) {
-    this.loadBrandsAndModels().then();
+    this.loadBrands.then();
   }
-  async loadBrandsAndModels(){
-    this.isLoading.next(true);
-    let brands = await this.loadBrands;
-    let arr = [];
-    brands.forEach(brand => {
-      arr.push(this.loadModels(brand.id));
-    });
-    Promise.all(arr).then(res => {
-      res.forEach(brand => {
-        let ref = brands.find(row => row.id === brand.id);
-        ref.id = brand.id;
-        ref.models = brand.models;
-      })
-      this.brands.next(brands);
-      this.isLoading.next(false);
-    })
-  }
-  loadBrands: Promise<any> = new Promise((res) => {
+  private loadBrands: Promise<Array<VehicleModelInterface>> = new Promise((res) => {
+    this.isLoadingModelData.next(true);
     this.http.get(this.endpoint)
       .pipe(
         retry(3),
@@ -44,23 +28,21 @@ export class VehicleService {
       )
       .subscribe(data => {
         res(data);
+        this.brands.next(data);
+        this.isLoadingModelData.next(false);
       });
   });
 
-  loadModels(brand_id: number) {
+  public loadAndGetModels(brand_id: number): Promise<Array<VehicleModelInterface>> {
     return this.http.get(`${this.endpoint}/${brand_id}/modelos`)
       .pipe(
         retry(3),
         map(models => {
-          let brand = {
-            id: brand_id,
-            models: models['modelos']
-              .map(model => ({
-                id: model.codigo,
-                description: model.nome
-              }))
-          }
-          return brand;
+          return models['modelos']
+            .map(model => ({
+              id: model.codigo,
+              description: model.nome
+            }));
         })
       ).toPromise();
   };
