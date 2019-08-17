@@ -14,6 +14,8 @@ import { VehicleService } from 'src/app/services/vehicle/vehicle.service';
 import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interface';
 import { VehicleBrands } from 'src/app/services/vehicle/vehicle-data';
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
+import { CpfMaskDirective } from 'src/app/modules/shared/directives/cpf-mask.directive';
+import { PhoneMaskDirective } from 'src/app/modules/shared/directives/phone-mask.directive';
 
 class mockVehicleService {
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
@@ -40,7 +42,11 @@ describe('ClientFormComponent', () => {
   let mockActivatedRoute;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClientFormComponent ],
+      declarations: [
+        ClientFormComponent,
+        CpfMaskDirective,
+        PhoneMaskDirective
+      ],
       imports: [
         ReactiveFormsModule,
         HttpClientModule,
