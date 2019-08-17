@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from 'src/app/services/vehicle/vehicle.service';
 import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interface';
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
+import { ValidatePhone } from 'src/app/validators/phone.validator';
 
 @Component({
   selector: 'app-client-form',
@@ -34,7 +35,8 @@ export class ClientFormComponent implements OnInit {
         Validators.required
       ]),
       phone: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        ValidatePhone.valid
       ]),
       birth_date: new FormControl(null, [
         Validators.required
@@ -45,7 +47,7 @@ export class ClientFormComponent implements OnInit {
         Validators.maxLength(100)
       ]),
       vehicle_brand: new FormControl(null, [
-        Validators.required,
+        Validators.required
       ]),
       vehicle_model: new FormControl(null, [
         Validators.required,
@@ -59,7 +61,6 @@ export class ClientFormComponent implements OnInit {
         return null;
       };
       if(this.models){
-        console.log('entrou null');
         this.form.get('vehicle_model').patchValue(null)
       }
       this.models = null;
