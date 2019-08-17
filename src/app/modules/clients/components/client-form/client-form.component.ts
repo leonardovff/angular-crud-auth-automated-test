@@ -5,6 +5,7 @@ import { ClientService } from 'src/app/services/client/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from 'src/app/services/vehicle/vehicle.service';
 import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interface';
+import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
 
 @Component({
   selector: 'app-client-form',
@@ -12,7 +13,8 @@ import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interfac
   styleUrls: ['./client-form.component.scss']
 })
 export class ClientFormComponent implements OnInit {
-  public brands: Array<VehicleBrandInterface>
+  public brands: Array<VehicleBrandInterface>;
+  public models: Array<VehicleModelInterface>;
   public form: FormGroup;
   private id: number;
   constructor(
@@ -45,13 +47,30 @@ export class ClientFormComponent implements OnInit {
       vehicle_brand: new FormControl(null, [
         Validators.required,
       ]),
-      // vehicle_model: new FormControl(null, [
-      //   Validators.required,
-      // ])
+      vehicle_model: new FormControl(null, [
+        Validators.required,
+      ])
     });
   }
-
   ngOnInit() {
+    let brandsListener = null;
+    this.form.get("vehicle_brand").valueChanges.subscribe(value => {
+      if(!value) {
+        return null;
+      };
+      if(this.models){
+        console.log('entrou null');
+        this.form.get('vehicle_model').patchValue(null)
+      }
+      this.models = null;
+
+      this.vehicleService.loadAndGetModels(value)
+        .then(models => {
+          this.models = models;
+        }).catch(() => {
+          alert("Falha ao carregar os modelos");
+        });
+    });
     this.vehicleService.brands.subscribe((brands) => {
       this.brands = brands;
     })
@@ -59,21 +78,28 @@ export class ClientFormComponent implements OnInit {
     if(this.id){
       this.clientService.getById(this.id)
         .then(data => {
+          data.vehicle_brand = data.vehicle_brand.id;
+          data.vehicle_model = data.vehicle_model.id;
           this.form.patchValue(data);
         });
     }
   }
+
   save() {
 
+    let value = {...this.form.value};
+    value.vehicle_brand = this.brands.find(brand => brand.id == value.vehicle_brand);
+    value.vehicle_model = this.models.find(brand => brand.id == value.vehicle_model);
+
     if(this.id){
-      return this.clientService.update(this.id, this.form.value)
+      return this.clientService.update(this.id, value)
         .then(()=>{
         alert("Foi");
         this.router.navigateByUrl('./../');
       });
     }
 
-    this.clientService.create(this.form.value)
+    this.clientService.create(value)
       .then(()=>{
         alert("Foi");
         this.router.navigateByUrl('./../');

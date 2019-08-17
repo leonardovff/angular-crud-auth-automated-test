@@ -28,15 +28,18 @@
   <label for="vehicle_brand">MARCA DO VEICULO</label>
   <select id="vehicle_brand" formControlName='vehicle_brand'
     maxlength="100">
+    <option disabled selected [value]="null">{{(brands)? 'Selecione' : 'Carregando'}}</option>
     <option *ngFor="let brand of brands" [value]="brand.id">{{brand.description}}</option>
+    <option *ngIf="!brands" selected [value]="null">Carregando</option>
   </select>
   <br>
 
-  <!-- <label for="vehicle_model">MODELO DO VEICULO</label>
-  <select id="vehicle_model" formControlName='vehicle_model'
+  <label for="vehicle_model">MODELO DO VEICULO</label>
+  <select id="vehicle_model" [disabled]="!models" formControlName='vehicle_model'
     maxlength="100">
-  </select> -->
+    <option disabled selected [value]="null">{{(models)? 'Selecione' : 'Carregando'}}</option>
+    <option *ngFor="let model of models" [value]="model.id">{{model.description}}</option>
+  </select>
   <br>
-
   <button type="submit" [disabled]="form.invalid">SALVAR</button>
 </form>

@@ -17,6 +17,7 @@ export class VehicleService {
     this.loadBrands();
   }
   private loadBrands(): void {
+    console.log('entrou')
     this.isLoadingModelData.next(true);
     this.http.get(this.endpoint)
       .pipe(

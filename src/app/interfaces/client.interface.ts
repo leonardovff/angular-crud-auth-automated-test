@@ -1,5 +1,5 @@
-import { VehicleBrand } from './vehicle-brand.interface';
-import { VehicleModel } from './vegicle-model.interface';
+import { VehicleBrandInterface } from './vehicle-brand.interface';
+import { VehicleModelInterface } from './vehicle-model.interface';
 
 export interface ClientInterface {
   id: number;
@@ -8,6 +8,6 @@ export interface ClientInterface {
   phone: string;
   birth_date: string;
   address: string;
-  vehicle_brand: VehicleBrand;
-  vehicle_model: VehicleModel;
+  vehicle_brand: VehicleBrandInterface;
+  vehicle_model: VehicleBrandInterface;
 }
