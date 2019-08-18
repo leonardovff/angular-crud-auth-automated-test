@@ -43,5 +43,5 @@
   </select>
   <app-input-error [control]="form.get('vehicle_model')"></app-input-error>
   <br>
-  <button type="submit" [disabled]="form.invalid">SALVAR</button>
+  <button type="submit" [disabled]="form.invalid || clientService.isLoading">SALVAR</button>
 </form>

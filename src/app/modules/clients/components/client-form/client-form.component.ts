@@ -21,7 +21,7 @@ export class ClientFormComponent implements OnInit {
   public form: FormGroup;
   private id: number;
   constructor(
-    protected clientService: ClientService,
+    public clientService: ClientService,
     private vehicleService: VehicleService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
