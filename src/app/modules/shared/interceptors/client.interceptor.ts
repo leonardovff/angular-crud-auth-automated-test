@@ -83,20 +83,16 @@ export class ClientInterceptor implements HttpInterceptor {
 
       // delete client
       if (request.url.match(/\/clients\/\d+$/) && request.method === 'DELETE') {
+        console.log(request.url);
         // check for fake auth token in header and return client if valid, this security is implemented server side in a real application
-        if (request.headers.get('Authorization') === 'Bearer fake_bearer_token') {
-          // find client by id in clients array
-          let urlParts = request.url.split('/');
-          let id = parseInt(urlParts[urlParts.length - 1]);
-          clients = clients.filter(u => u.id != id)
-          localStorage.setItem('clients', JSON.stringify(clients));
+        // find client by id in clients array
+        let urlParts = request.url.split('/');
+        let id = parseInt(urlParts[urlParts.length - 1]);
+        clients = clients.filter(u => u.id != id)
+        localStorage.setItem('clients', JSON.stringify(clients));
 
-          // respond 200 OK
-          return of(new HttpResponse({ status: 200 }));
-        } else {
-          // return 401 not authorised if token is null or invalid
-          return throwError({ error: { message: 'Unauthorised' } });
-        }
+        // respond 200 OK
+        return of(new HttpResponse({ status: 200 }));
       }
 
       // pass through any requests not handled above

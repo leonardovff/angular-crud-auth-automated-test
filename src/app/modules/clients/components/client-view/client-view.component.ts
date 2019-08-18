@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from 'src/app/services/client/client.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClientInterface } from 'src/app/interfaces/client.interface';
+import { ShowMessageService } from 'src/app/components/show-message/show-message.service';
 
 @Component({
   selector: 'app-client-view',
@@ -12,7 +13,9 @@ export class ClientViewComponent implements OnInit {
   private client: ClientInterface;
   constructor(
     private service: ClientService,
-    private activatedRoute: ActivatedRoute
+    private route: Router,
+    private activatedRoute: ActivatedRoute,
+    private message: ShowMessageService
   ) { }
 
   ngOnInit() {
@@ -22,7 +25,21 @@ export class ClientViewComponent implements OnInit {
           .then(data => {
             this.client = data
           })
+          .catch(() => {
+            this.message.show("Cliente não encontrado");
+            this.route.navigate(['./../']);
+          })
       });
+  }
+  delete(){
+    this.service
+      .delete(this.client.id)
+      .then(() => {
+        this.message.show("Cliente excluido");
+        this.route.navigate(['./../']);
+      }).catch(() => {
+        this.message.show("Erro ao excluir o usuário");
+      })
   }
 
 }

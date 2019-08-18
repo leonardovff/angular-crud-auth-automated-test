@@ -40,7 +40,7 @@ describe('ClientService', () => {
       arrage.expect.clients.forEach(client => {
         let filtered = data.filter(row => row.id == client.id);
         expect(filtered.length).toBe(1);
-        expect(JSON.stringify(filtered[0])).toBe(JSON.stringify(client));
+        expect(filtered[0]).toEqual(client);
       });
 
       // verify isLoading flag
@@ -64,12 +64,12 @@ describe('ClientService', () => {
           "birth_date": "24/01/2000",
           "address": "Veronica Place, 663",
           "vehicle_brand": {
-            "id": 59,
-            "description": "VW - VolksWagen"
+            "id": 2,
+            "description": "Agrale"
           },
           "vehicle_model": {
-            "description": "Corrado 2.0 Turbo",
-            "id": 2366
+            "description": "MARRUÁ AM 200 2.8  CD TDI Diesel",
+            "id": 4567
           }
         }
       }

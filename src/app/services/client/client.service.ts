@@ -54,4 +54,13 @@ export class ClientService {
       )
       .toPromise();
   }
+
+  delete(id: number): Promise<any>{
+    this.isLoading = true;
+    return this.http.delete(`@rhi-api/${this.endpoint}/${id}`)
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
+      .toPromise();
+  }
 }

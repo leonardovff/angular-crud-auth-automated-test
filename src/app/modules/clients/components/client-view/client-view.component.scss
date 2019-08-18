@@ -3,6 +3,11 @@
   flex-flow: wrap column;
   overflow: hidden;
 }
+nav{
+  div{
+    display: inline-flex;
+  }
+}
 ul{
   flex: 1;
   overflow: auto;

@@ -1,9 +1,14 @@
 <nav class="toolbar">
   <a title="Voltar pra listagem" routerLink="./.."><img src="./../../../../../assets/img/arrow_back.png" alt="voltar"></a>
   <h3>Visualização de cliente</h3>
-  <a title="Editar cliente" routerLink="./edit">
-    <img src="./../../../../../assets/img/edit_white.png" alt="editar">
-  </a>
+  <div>
+    <button title="Deletar" (click)="delete()">
+      <img src="./../../../../../assets/img/delete_white.png" alt="editar">
+    </button>
+    <a style="margin-left: 1em;" title="Editar cliente" routerLink="./edit">
+      <img src="./../../../../../assets/img/edit_white.png" alt="editar">
+    </a>
+  </div>
 </nav>
 <ul>
   <li>

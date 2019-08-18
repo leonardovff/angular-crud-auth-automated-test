@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'reset.scss';
+@import 'font.scss';
 @import "node_modules/loaders.css/src/loaders";
 html, body { height: 100%; }
 body { margin: 0; font-family: "Rogan" }
@@ -47,7 +48,13 @@ nav.toolbar{
     text-transform: uppercase;
     font-size: 0.7em;
   }
-  a{
+  a:first-child{
+    margin-right: 1em;
+  }
+  a, button{
+    cursor: pointer;
+    background: none;
+    border: none;
     display: inline-flex;
     align-content: center;
     color: white;

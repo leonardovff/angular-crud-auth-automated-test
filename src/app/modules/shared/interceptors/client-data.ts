@@ -9,12 +9,12 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1999-09-03",
     "address": "Livingston Street, 579",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id":2,
+      "description": "Agrale"
     },
     "vehicle_model": {
-      "description": "Band.Picape Chassi Longo Diesel",
-      "id": 2212
+      "description": "MARRU\u00c1 AM 100 2.8 CD TDI Diesel",
+      "id": 4563
     }
   },
   {
@@ -25,13 +25,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "2000-01-24",
     "address": "Veronica Place, 663",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "Corrado 2.0 Turbo",
-      "id": 2366
-    }
+    "vehicle_model":  {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 3,
@@ -41,13 +38,11 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1969-08-08",
     "address": "Montgomery Place, 300",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "Caravelle 2.4 Diesel",
-      "id": 2365
-    }
+    "vehicle_model":
+    {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 4,
@@ -57,13 +52,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1978-11-11",
     "address": "Hendrickson Street, 229",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla GLi 1.8 Flex 16V Mec.",
-      "id": 5042
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 5,
@@ -73,13 +65,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1989-05-02",
     "address": "Will Place, 364",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla GLi 1.8 Flex 16V  Aut.",
-      "id": 5041
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 6,
@@ -89,13 +78,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1969-10-21",
     "address": "Frank Court, 872",
     "vehicle_brand": {
-      "id": 47,
-      "description": "Porsche"
+      "id": 4,
+      "description": "AM Gen"
     },
-    "vehicle_model": {
-      "description": "911 Carrera Coupe GTS 3.8 24V 408cv",
-      "id": 5508
-    }
+    "vehicle_model": {description: "Hummer Wagon 6.5 4x4 Diesel TB", id: 23}
   },
   {
     "id": 7,
@@ -105,13 +91,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1976-11-5",
     "address": "Hegeman Avenue, 812",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "AMAROK CS2.0 16V/S2.0 16V TDI 4x4 Diesel",
-      "id": 5749
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 8,
@@ -121,13 +104,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1962-02-13",
     "address": "Paerdegat Avenue, 312",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "AMAROK CD2.0 16V/S CD2.0 16V TDI 4x4 Die",
-      "id": 5586
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 9,
@@ -137,13 +117,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1972-06-07",
     "address": "Schenck Street, 924",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla DX/ SW DX 1.6 16V",
-      "id": 2220
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 10,
@@ -153,13 +130,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1995-08-18",
     "address": "Merit Court, 648",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Camry XLE 3.5 24V Aut.",
-      "id": 4091
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 11,
@@ -169,13 +143,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1999-07-01",
     "address": "Portal Street, 235",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "AMAROK Trendline CD 2.0 TDI 4X4 Dies Aut",
-      "id": 6277
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 12,
@@ -185,13 +156,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1971-04-07",
     "address": "Prescott Place, 580",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "Apolo GL 1.8",
-      "id": 2359
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 13,
@@ -201,13 +169,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1976-04-10",
     "address": "Olive Street, 657",
     "vehicle_brand": {
-      "id": 47,
-      "description": "Porsche"
+      "id": 4,
+      "description": "AM Gen"
     },
-    "vehicle_model": {
-      "description": "911 Carrera 4 GTS Targa 3.8 24V (991)",
-      "id": 7458
-    }
+    "vehicle_model": {description: "Hummer Wagon 6.5 4x4 Diesel TB", id: 23}
   },
   {
     "id": 14,
@@ -217,13 +182,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1994-07-25",
     "address": "Ivan Court, 741",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "AMAROK Trendline CD 2.0 TDI 4X4 Dies Aut",
-      "id": 6277
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 15,
@@ -233,13 +195,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1965-11-28",
     "address": "Ridgewood Place, 442",
     "vehicle_brand": {
-      "id": 47,
-      "description": "Porsche"
+      "id": 4,
+      "description": "AM Gen"
     },
-    "vehicle_model": {
-      "description": "911 Carrera 4 GTS Coupe 3.8 24V (991)",
-      "id": 7316
-    }
+    "vehicle_model": {description: "Hummer Wagon 6.5 4x4 Diesel TB", id: 23}
   },
   {
     "id": 16,
@@ -249,13 +208,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1983-04-12",
     "address": "Bay Parkway, 789",
     "vehicle_brand": {
-      "id": 59,
-      "description": "VW - VolksWagen"
+      "id": 2,
+      "description": "Agrale"
     },
-    "vehicle_model": {
-      "description": "AMAROK CD2.0 16V/S CD2.0 16V TDI 4x2 Die",
-      "id": 5585
-    }
+    "vehicle_model": {description: "MARRU\u00c1 AM 200 2.8  CD TDI Diesel", id: 4567}
   },
   {
     "id": 17,
@@ -265,13 +221,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1988-09-03",
     "address": "Bayview Avenue, 670",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla Fielder SW 1.8/1.8 XEi Flex Aut.",
-      "id": 2221
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 18,
@@ -281,13 +234,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1965-12-10",
     "address": "Montieth Street, 921",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla GLi 1.8 Flex 16V Mec.",
-      "id": 5042
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 19,
@@ -297,13 +247,10 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1961-06-25",
     "address": "Lewis Place, 201",
     "vehicle_brand": {
-      "id": 56,
-      "description": "Toyota"
+      "id": 1,
+      "description": "Acura"
     },
-    "vehicle_model": {
-      "description": "Corolla LE 2.2 16V",
-      "id": 2224
-    }
+    "vehicle_model": {description: "NSX 3.0", id: 3}
   },
   {
     "id": 20,
@@ -313,12 +260,9 @@ export let ClientsData: Array<ClientInterface> = [
     "birth_date": "1972-06-11",
     "address": "Herkimer Court, 492",
     "vehicle_brand": {
-      "id": 47,
-      "description": "Porsche"
+      "id": 4,
+      "description": "AM Gen"
     },
-    "vehicle_model": {
-      "description": "911 Carrera Cabriolet 3.4/ 3.6 Tiptronic",
-      "id": 1957
-    }
+    "vehicle_model": {description: "Hummer Wagon 6.5 4x4 Diesel TB", id: 23}
   }
 ]
