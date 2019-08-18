@@ -35,7 +35,7 @@ describe('ClientListComponent', () => {
       expect: {
         clients: ClientsData.map(client => {
           client = {...client};
-          client['name'] = client['name'] + " >"
+          client['name'] = client['name'] + " ❯"
           return client;
         })
       }

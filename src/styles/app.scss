@@ -5,6 +5,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: "Rogan" }
 a, p, h2, h3{
   letter-spacing: 0.68pt;
+  font-family: "Rogan";
 }
 .btn{
   position: relative;
@@ -15,6 +16,7 @@ a, p, h2, h3{
   padding: 1.9em 2em;
   font-weight: bold;
   align-items: center;
+  cursor: pointer;
   &:after{
     content: "";
     position: absolute;
@@ -28,5 +30,30 @@ a, p, h2, h3{
   span{
     font-size: 1.3em;
     margin-left: auto;
+  }
+  &:disabled{
+    display: none;
+  }
+}
+
+nav.toolbar{
+  display: flex;
+  justify-content: space-between;
+  padding: .8em;
+  background: #2c3a5a;
+  align-items: center;
+  h3{
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7em;
+  }
+  a{
+    color: white;
+    font-size: 1em;
+    fill-opacity: red;
+  }
+  a:first-child{
+    size: 0.6em;
+    transform: scale(1,1.2) rotate(180deg);
   }
 }

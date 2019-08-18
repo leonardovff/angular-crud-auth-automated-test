@@ -100,7 +100,7 @@ export class ClientFormComponent implements OnInit {
       return this.clientService.update(this.id, value)
         .then(()=>{
           this.showMessage.show('Salvo com sucesso');
-          this.router.navigateByUrl('./../');
+          this.router.navigate(['../']);
         });
     }
 

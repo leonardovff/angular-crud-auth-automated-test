@@ -1,5 +1,9 @@
+<nav class="toolbar">
+  <a title="Voltar pra listagem" routerLink="./..">X</a>
+  <h3>EDIÇÃO DE CLIENTE</h3>
+</nav>
 <form [formGroup]="form" (ngSubmit)="save()">
-  <label for="name">Nome</label>
+  <label for="name">NOME</label>
   <input type="text" autocomplete="off" id="name" formControlName='name'
     maxlength="100">
   <app-input-error [control]="form.get('name')"></app-input-error>
@@ -41,7 +45,6 @@
     <option disabled selected [value]="null">{{(models)? 'Selecione' : 'Carregando'}}</option>
     <option *ngFor="let model of models" [value]="model.id">{{model.description}}</option>
   </select>
-  <app-input-error [control]="form.get('vehicle_model')"></app-input-error>
-  <br>
-  <button type="submit" [disabled]="form.invalid || clientService.isLoading">SALVAR</button>
+  <app-input-error class="last" [control]="form.get('vehicle_model')"></app-input-error>
+  <button type="submit" class="btn" [disabled]="form.invalid || clientService.isLoading">SALVAR</button>
 </form>

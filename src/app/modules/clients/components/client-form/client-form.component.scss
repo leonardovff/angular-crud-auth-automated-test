@@ -1,5 +1,59 @@
-input, select{
-  &.ng-touched.ng-invalid {
-    border: 1px solid red;
+:host{
+  height: 100%;
+  display: flex;
+  flex-flow: nowrap column;
+  overflow: hidden;
+}
+nav{
+  justify-content: flex-start;
+  a{
+    margin-right: 1.5em;
+  }
+}
+form{
+  overflow: auto;
+  padding: 2em 1em 0;
+  input, select{
+    &.ng-touched.ng-invalid {
+      border: 1px solid red;
+    }
+  }
+  label{
+    color: #5C4A42;
+    font-size: 0.7em;
+    letter-spacing: 0.8pt;
+  }
+  input, select{
+    letter-spacing: 0.6pt;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0.5em;
+    background: #4C413F;
+    padding: 1em;
+    color:#D9BD93;
+    display: block;
+    font-size: .8em;
+    border: none;
+  }
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    padding-right: 3em;
+    background: url("./../../../../../assets/img/btn-down.png") #4C413F no-repeat center right 15px;
+  }
+  app-input-error.last{
+    margin-bottom: 5.5em;
+    display: inline-block;
+  }
+  button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.65em;
+    padding-left: 3em;
+    border: 0;
   }
 }
