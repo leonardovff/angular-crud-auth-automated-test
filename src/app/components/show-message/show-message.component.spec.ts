@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowMessageComponent } from './show-message.component';
-import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
+import { ShowMessageService } from 'src/app/components/show-message/show-message.service';
 import { By } from '@angular/platform-browser';
 
 describe('ShowMessageComponent', () => {

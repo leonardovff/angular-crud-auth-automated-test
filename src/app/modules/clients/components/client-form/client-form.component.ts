@@ -8,7 +8,7 @@ import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interfac
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
 import { ValidatePhone } from 'src/app/validators/phone.validator';
 import { DateValidator } from 'src/app/validators/date.validator';
-import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
+import { ShowMessageService } from 'src/app/components/show-message/show-message.service';
 
 @Component({
   selector: 'app-client-form',

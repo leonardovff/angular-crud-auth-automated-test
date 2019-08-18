@@ -18,7 +18,7 @@ import { PhoneMaskDirective } from 'src/app/modules/shared/directives/phone-mask
 import { BirthDateMaskDirective } from 'src/app/modules/shared/directives/birth-date-mask.directive';
 import { InputErrorComponent } from 'src/app/modules/shared/components/input-error/input-error.component';
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
-import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
+import { ShowMessageService } from 'src/app/components/show-message/show-message.service';
 
 class mockVehicleService {
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
+import { ShowMessageService } from 'src/app/components/show-message/show-message.service';
 
 @Component({
   selector: 'app-show-message',
