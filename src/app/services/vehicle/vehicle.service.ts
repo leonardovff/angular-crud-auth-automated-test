@@ -4,7 +4,7 @@ import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interfac
 import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interface';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { retry, map } from 'rxjs/operators';
+import { retry, map, finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,12 @@ import { retry, map } from 'rxjs/operators';
 export class VehicleService {
   private endpoint: string = environment.vehicle_api + "carros/marcas";
   public isLoadingModelData: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public isLoadingVehicleData: boolean = false;
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
   constructor(private http: HttpClient) {
     this.loadBrands();
   }
   private loadBrands(): void {
-    console.log('entrou')
     this.isLoadingModelData.next(true);
     this.http.get(this.endpoint)
       .pipe(
@@ -34,6 +34,7 @@ export class VehicleService {
   };
 
   public loadAndGetModels(brand_id: number): Promise<Array<VehicleModelInterface>> {
+    this.isLoadingVehicleData = true;
     return this.http.get(`${this.endpoint}/${brand_id}/modelos`)
       .pipe(
         retry(3),
@@ -43,7 +44,8 @@ export class VehicleService {
               id: model.codigo,
               description: model.nome
             }));
-        })
+        }),
+        finalize(()=> this.isLoadingVehicleData = false)
       ).toPromise();
   };
 
