@@ -48,12 +48,13 @@ nav.toolbar{
     font-size: 0.7em;
   }
   a{
+    display: inline-flex;
+    align-content: center;
     color: white;
     font-size: 1em;
-    fill-opacity: red;
-  }
-  a:first-child{
-    size: 0.6em;
-    transform: scale(1,1.2) rotate(180deg);
+    overflow: auto;
+    img{
+      width: 1em;
+    }
   }
 }

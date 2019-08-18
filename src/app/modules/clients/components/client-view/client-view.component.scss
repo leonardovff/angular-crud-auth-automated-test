@@ -3,12 +3,6 @@
   flex-flow: wrap column;
   overflow: hidden;
 }
-nav{
-  a:first-child{
-    size: 0.6em;
-    transform: scale(1,1.2) rotate(180deg);
-  }
-}
 ul{
   flex: 1;
   overflow: auto;

@@ -28,20 +28,21 @@ form{
     box-sizing: border-box;
     width: 100%;
     margin-top: 0.5em;
-    background: #4C413F;
+    background: #6f6765;
     padding: 1em;
     color:#D9BD93;
     display: block;
     font-size: .8em;
     border: none;
   }
+
   select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     position: relative;
     padding-right: 3em;
-    background: url("./../../../../../assets/img/btn-down.png") #4C413F no-repeat center right 15px;
+    background: url("./../../../../../assets/img/btn-down.png") #6f6765 no-repeat center right 15px;
   }
   app-input-error.last{
     margin-bottom: 5.5em;
