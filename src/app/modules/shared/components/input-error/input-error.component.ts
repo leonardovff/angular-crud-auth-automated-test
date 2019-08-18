@@ -32,7 +32,6 @@ export class InputErrorComponent implements OnInit {
 
   getError() {
     if(!this.control.errors) return '';
-    console.log(this.control.errors);
     let priorityError = Object.keys(this.errorMessages)
     .find(error => typeof this.control.errors[error] != 'undefined');
     return this.errorMessages[priorityError](this.control.errors[priorityError]);

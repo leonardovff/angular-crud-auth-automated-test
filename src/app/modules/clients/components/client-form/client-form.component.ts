@@ -8,6 +8,7 @@ import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interfac
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
 import { ValidatePhone } from 'src/app/validators/phone.validator';
 import { DateValidator } from 'src/app/validators/date.validator';
+import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
 
 @Component({
   selector: 'app-client-form',
@@ -23,7 +24,8 @@ export class ClientFormComponent implements OnInit {
     protected clientService: ClientService,
     private vehicleService: VehicleService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private showMessage: ShowMessageService
   ) {
     this.form = new FormGroup({
       name: new FormControl(null, [
@@ -71,7 +73,7 @@ export class ClientFormComponent implements OnInit {
         .then(models => {
           this.models = models;
         }).catch(() => {
-          alert("Falha ao carregar os modelos");
+          this.showMessage.show('Falha ao carregar os modelos');
         });
     });
     this.vehicleService.brands.subscribe((brands) => {
@@ -97,14 +99,15 @@ export class ClientFormComponent implements OnInit {
     if(this.id){
       return this.clientService.update(this.id, value)
         .then(()=>{
-        alert("Foi");
-        this.router.navigateByUrl('./../');
-      });
+          console.log("entrou");
+          this.showMessage.show('Salvo com sucesso');
+          this.router.navigateByUrl('./../');
+        });
     }
 
     this.clientService.create(value)
       .then(()=>{
-        alert("Foi");
+        this.showMessage.show('Salvo com sucesso');
         this.router.navigateByUrl('./../');
       });
   }

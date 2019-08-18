@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ClientService } from 'src/app/services/client/client.service';
 import { ActivatedRoute } from '@angular/router';
-import { format } from 'util';
 import { By } from '@angular/platform-browser';
 import { of, BehaviorSubject } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -18,6 +17,8 @@ import { CpfMaskDirective } from 'src/app/modules/shared/directives/cpf-mask.dir
 import { PhoneMaskDirective } from 'src/app/modules/shared/directives/phone-mask.directive';
 import { BirthDateMaskDirective } from 'src/app/modules/shared/directives/birth-date-mask.directive';
 import { InputErrorComponent } from 'src/app/modules/shared/components/input-error/input-error.component';
+import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
+import { ShowMessageService } from 'src/app/modules/shared/components/show-message.service';
 
 class mockVehicleService {
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
@@ -42,6 +43,7 @@ describe('ClientFormComponent', () => {
   let spyClientServiceUpdate;
   let spyClientServiceGet;
   let mockActivatedRoute;
+  let spyShowMessageService;
 
   const fillAndValidField = async (inputId, callback) => {
     const formControl = component.form.get(inputId);
@@ -57,7 +59,7 @@ describe('ClientFormComponent', () => {
         ClientFormComponent,
         CpfMaskDirective,
         PhoneMaskDirective,
-        BirthDateMaskDirective,,
+        BirthDateMaskDirective,
         InputErrorComponent
       ],
       imports: [
@@ -76,7 +78,8 @@ describe('ClientFormComponent', () => {
         {
           provide: VehicleService,
           useClass: mockVehicleService
-        }
+        },
+        ShowMessageService
       ]
     })
     .compileComponents();
@@ -86,6 +89,8 @@ describe('ClientFormComponent', () => {
     fixture = TestBed.createComponent(ClientFormComponent);
     component = fixture.componentInstance;
     const mockClientService = fixture.debugElement.injector.get(ClientService);
+    const mockShowMessageService = fixture.debugElement.injector.get(ShowMessageService);
+    spyShowMessageService = spyOn(mockShowMessageService, 'show');
     spyClientServiceUpdate = spyOn(mockClientService, 'update');
     spyClientServiceCreate = spyOn(mockClientService, 'create');
     spyClientServiceGet = spyOn(mockClientService, 'getById');
@@ -95,7 +100,6 @@ describe('ClientFormComponent', () => {
     let arrage = {
       input: {
         params: {},
-        message: "Salvo com sucesso",
         returnRequestCreate: {"message": "Success"},
         client: {
           name: "Guilherme Silveira",
@@ -108,6 +112,7 @@ describe('ClientFormComponent', () => {
         }
       },
       expect: {
+        message: "Salvo com sucesso",
         client: {
           name: "Guilherme Silveira",
           cpf: "747.576.028-63",
@@ -144,13 +149,14 @@ describe('ClientFormComponent', () => {
     expect(component.form.valid).toBeTruthy("form validation");
     fixture.debugElement.query(By.css('button')).nativeElement.click();
     expect(spyClientServiceCreate).toHaveBeenCalledWith(arrage.expect.client);
+    await new Promise(res => setTimeout(() => (res()),100));
+    expect(spyShowMessageService).toHaveBeenCalledWith(arrage.expect.message);
   });
   it('should edit one client', async () => {
     let arrage = {
       input: {
         params: {id: 1},
         id: 1,
-        message: "Salvo com sucesso",
         returnUpdateRequest: {"message": "Success"},
         change: {
           name: "Michael Ratliff2",
@@ -227,6 +233,8 @@ describe('ClientFormComponent', () => {
     fixture.debugElement.query(By.css('button')).nativeElement.click();
     fixture.detectChanges();
     expect(spyClientServiceUpdate).toHaveBeenCalledWith(arrage.expect.id, arrage.expect.client);
+    await new Promise(res => setTimeout(() => (res()),100));
+    expect(spyShowMessageService).toHaveBeenCalledWith(arrage.expect.message);
   });
   it('should not create one client with wrong data', async () => {
     let arrage = {
@@ -268,5 +276,7 @@ describe('ClientFormComponent', () => {
     expect(component.form.valid).toBeFalsy("form validation");
     fixture.debugElement.query(By.css('button')).nativeElement.click();
     expect(spyClientServiceCreate).not.toHaveBeenCalled()
+    await new Promise(res => setTimeout(() => (res()),100));
+    expect(spyShowMessageService).not.toHaveBeenCalled();
   });
 });
