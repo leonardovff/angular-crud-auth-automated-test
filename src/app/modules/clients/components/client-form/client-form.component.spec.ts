@@ -17,6 +17,7 @@ import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interfac
 import { CpfMaskDirective } from 'src/app/modules/shared/directives/cpf-mask.directive';
 import { PhoneMaskDirective } from 'src/app/modules/shared/directives/phone-mask.directive';
 import { BirthDateMaskDirective } from 'src/app/modules/shared/directives/birth-date-mask.directive';
+import { InputErrorComponent } from 'src/app/modules/shared/components/input-error/input-error.component';
 
 class mockVehicleService {
   public brands: BehaviorSubject<Array<VehicleBrandInterface>> = new BehaviorSubject(null);
@@ -56,7 +57,8 @@ describe('ClientFormComponent', () => {
         ClientFormComponent,
         CpfMaskDirective,
         PhoneMaskDirective,
-        BirthDateMaskDirective
+        BirthDateMaskDirective,,
+        InputErrorComponent
       ],
       imports: [
         ReactiveFormsModule,

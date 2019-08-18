@@ -10,6 +10,7 @@ import { ClientInterceptor } from './interceptors/client.interceptor';
 import { CpfMaskDirective } from './directives/cpf-mask.directive';
 import { PhoneMaskDirective } from './directives/phone-mask.directive';
 import { BirthDateMaskDirective } from './directives/birth-date-mask.directive';
+import { InputErrorComponent } from './components/input-error/input-error.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BirthDateMaskDirective } from './directives/birth-date-mask.directive';
     ListItemComponent,
     CpfMaskDirective,
     PhoneMaskDirective,
-    BirthDateMaskDirective
+    BirthDateMaskDirective,
+    InputErrorComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { BirthDateMaskDirective } from './directives/birth-date-mask.directive';
     ListItemComponent,
     CpfMaskDirective,
     PhoneMaskDirective,
-    BirthDateMaskDirective
+    BirthDateMaskDirective,
+    InputErrorComponent
   ],
   providers: [
     {

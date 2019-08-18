@@ -7,9 +7,7 @@ export class ValidatePhone {
     return ValidatePhone.valid_cell_phone(control.value)
       ? null
       : {
-        validateCellPhone: {
-          valid: false
-        }
+        validatePhone: false
       };
   }
   static valid_cell_phone(number) {

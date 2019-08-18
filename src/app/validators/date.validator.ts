@@ -7,9 +7,7 @@ export class DateValidator {
       return null;
     }
     return {
-      validateEmail: {
-        valid: false
-      }
+      validateDate: false
     }
   }
 

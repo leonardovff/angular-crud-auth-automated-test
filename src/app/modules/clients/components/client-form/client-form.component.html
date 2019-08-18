@@ -1,25 +1,30 @@
 <form [formGroup]="form" (ngSubmit)="save()">
   <label for="name">Nome</label>
-  <input type="text" id="name" formControlName='name'
+  <input type="text" autocomplete="off" id="name" formControlName='name'
     maxlength="100">
+  <app-input-error [control]="form.get('name')"></app-input-error>
   <br>
 
   <label for="cpf">CPF</label>
-  <input type="text" formControlName='cpf'
+  <input type="text" autocomplete="off" formControlName='cpf'
     id="cpf" appCpfMask maxlength="14">
+  <app-input-error [control]="form.get('cpf')"></app-input-error>
   <br>
 
   <label for="phone">TELEFONE</label>
-  <input phoneMask type="text" formControlName='phone' id="phone">
+  <input phoneMask autocomplete="off" type="text" formControlName='phone' id="phone">
+  <app-input-error [control]="form.get('phone')"></app-input-error>
   <br>
 
   <label for="birth_date">DATA DE NASCIMENTO</label>
-  <input type="text" appBirthDateMask id="birth_date" formControlName='birth_date'>
+  <input type="text" autocomplete="off" appBirthDateMask id="birth_date" formControlName='birth_date'>
+  <app-input-error [control]="form.get('birth_date')"></app-input-error>
   <br>
 
   <label for="address">ENDEREÇO</label>
   <input type="text" id="address" formControlName='address'
     maxlength="100">
+  <app-input-error [control]="form.get('address')"></app-input-error>
   <br>
 
   <label for="vehicle_brand">MARCA DO VEICULO</label>
@@ -28,6 +33,7 @@
     <option *ngFor="let brand of brands" [value]="brand.id">{{brand.description}}</option>
     <option *ngIf="!brands" selected [value]="null">Carregando</option>
   </select>
+  <app-input-error [control]="form.get('vehicle_brand')"></app-input-error>
   <br>
 
   <label for="vehicle_model">MODELO DO VEICULO</label>
@@ -35,6 +41,7 @@
     <option disabled selected [value]="null">{{(models)? 'Selecione' : 'Carregando'}}</option>
     <option *ngFor="let model of models" [value]="model.id">{{model.description}}</option>
   </select>
+  <app-input-error [control]="form.get('vehicle_model')"></app-input-error>
   <br>
   <button type="submit" [disabled]="form.invalid">SALVAR</button>
 </form>

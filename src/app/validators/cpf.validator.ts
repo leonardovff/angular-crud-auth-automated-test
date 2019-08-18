@@ -7,9 +7,7 @@ export class CpfValidator {
       return null;
     }
     return {
-      validateEmail: {
-        valid: false
-      }
+      validateCpf: false
     }
   }
 
