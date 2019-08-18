@@ -1,7 +1,45 @@
-<a title="Editar cliente" routerLink="./edit">
-Editar
-</a><br>
-{{client?.name}}<br>
-{{client?.cpf}}<br>
-{{client?.vehicle_model?.description}}<br>
-{{client?.vehicle_brand?.description}}<br>
+<nav>
+  <a title="Voltar pra listagem" routerLink="./../">➜</a>
+  <h3>Visualização de cliente</h3>
+  <a title="Editar cliente" routerLink="./edit">
+    &#9998;
+  </a>
+</nav>
+<ul>
+  <li>
+    <p>
+      {{client?.name}}
+      <span>NOME</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      {{client?.cpf}}
+      <span>CPF</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      {{client?.phone}}
+      <span>TELEFONE</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      {{client?.birth_date}}
+      <span>DATA DE NASCIMENTO</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      {{client?.address}}
+      <span>ENDEREÇO</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      {{client?.vehicle_brand?.description}} - {{client?.vehicle_model?.description}}
+      <span>VEÍCULO</span>
+    </p>
+  </li>
+</ul>
