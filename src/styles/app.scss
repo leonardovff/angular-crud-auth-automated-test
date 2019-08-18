@@ -3,3 +3,30 @@
 @import "node_modules/loaders.css/src/loaders";
 html, body { height: 100%; }
 body { margin: 0; font-family: "Rogan" }
+a, p, h2, h3{
+  letter-spacing: 0.68pt;
+}
+.btn{
+  position: relative;
+  display: inline-flex;
+  color:#F0D2A1;
+  font-size: 0.55em;
+  background: #604519;
+  padding: 1.9em 2em;
+  font-weight: bold;
+  align-items: center;
+  &:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 63%;
+    width: 93%;
+    border: 1px solid #F0D2A1;
+  }
+  span{
+    font-size: 1.3em;
+    margin-left: auto;
+  }
+}

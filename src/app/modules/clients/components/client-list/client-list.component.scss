@@ -1,0 +1,24 @@
+:host{
+  height: 100%;
+  display: flex;
+  flex-flow: nowrap column;
+  overflow: hidden;
+}
+header{
+  background: url('./../../../../../assets/img/header-bg.png') no-repeat center center;
+  background-size: cover;
+  padding: 2em 1em 1em;
+}
+h1{
+  padding-bottom: .5em;
+}
+h2{
+  color: white;
+  font-size: 0.9em;
+}
+rhi-ui-list{
+  overflow: auto;
+}
+a{
+  margin-top: auto;
+}

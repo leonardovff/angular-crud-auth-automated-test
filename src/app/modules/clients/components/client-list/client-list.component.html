@@ -1,3 +1,7 @@
+<header>
+  <h1><img src="./assets/img/logo.svg" alt="logo"></h1>
+  <h2>Clientes</h2>
+</header>
 <rhi-ui-list>
   <rhi-ui-list-item
     *ngFor="let user of users"
@@ -6,3 +10,4 @@
     {{user?.name}}
   </rhi-ui-list-item>
 </rhi-ui-list>
+<a title="Adicionar Clientes" class="btn" routerLink="./add">ADICIONAR<span>+</span></a>
