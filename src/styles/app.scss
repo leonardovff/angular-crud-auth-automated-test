@@ -32,8 +32,17 @@ a, p, h2, h3{
     font-size: 1.3em;
     margin-left: auto;
   }
+  margin-top: auto;
   &:disabled{
     display: none;
+  }
+  @media(min-width: 42em){
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media(min-width: 82em){
+    width: 350px;
   }
 }
 

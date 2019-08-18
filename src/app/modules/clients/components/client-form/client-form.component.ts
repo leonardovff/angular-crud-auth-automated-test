@@ -16,6 +16,7 @@ import { ShowMessageService } from 'src/app/components/show-message/show-message
   styleUrls: ['./client-form.component.scss']
 })
 export class ClientFormComponent implements OnInit {
+  public title: string;
   public brands: Array<VehicleBrandInterface>;
   public models: Array<VehicleModelInterface>;
   public form: FormGroup;
@@ -80,6 +81,7 @@ export class ClientFormComponent implements OnInit {
       this.brands = brands;
     })
     this.id = this.activatedRoute.snapshot.params.id;
+    this.title = this.id ? 'EDIÇÃO DE CLIENTE' : "NOVO CLIENTE";
     if(this.id){
       this.clientService.getById(this.id)
         .then(data => {

@@ -53,5 +53,18 @@ form{
     font-size: 0.65em;
     padding-left: 3em;
     border: 0;
+    @media(min-width: 52em){
+      display: block;
+    }
+  }
+
+  @media(min-width: 52em){
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+
+  @media(min-width: 80em){
+    padding-left: 30em;
+    padding-right: 30em;
   }
 }
