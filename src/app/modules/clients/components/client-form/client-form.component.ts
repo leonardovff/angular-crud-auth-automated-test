@@ -99,7 +99,6 @@ export class ClientFormComponent implements OnInit {
     if(this.id){
       return this.clientService.update(this.id, value)
         .then(()=>{
-          console.log("entrou");
           this.showMessage.show('Salvo com sucesso');
           this.router.navigateByUrl('./../');
         });
