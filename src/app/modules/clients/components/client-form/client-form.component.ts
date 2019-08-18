@@ -7,6 +7,7 @@ import { VehicleService } from 'src/app/services/vehicle/vehicle.service';
 import { VehicleBrandInterface } from 'src/app/interfaces/vehicle-brand.interface';
 import { VehicleModelInterface } from 'src/app/interfaces/vehicle-model.interface';
 import { ValidatePhone } from 'src/app/validators/phone.validator';
+import { DateValidator } from 'src/app/validators/date.validator';
 
 @Component({
   selector: 'app-client-form',
@@ -31,15 +32,16 @@ export class ClientFormComponent implements OnInit {
         Validators.maxLength(100)
       ]),
       cpf: new FormControl(null, [
-        CpfValidator.valid,
-        Validators.required
+        Validators.required,
+        CpfValidator.valid
       ]),
       phone: new FormControl(null, [
         Validators.required,
         ValidatePhone.valid
       ]),
       birth_date: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        DateValidator.valid,
       ]),
       address: new FormControl(null, [
         Validators.required,
