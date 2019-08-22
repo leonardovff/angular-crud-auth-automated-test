@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderFeedbackService } from '../loader-feedback.service';
 
 @Component({
-  selector: 'app-loader-feedbak',
-  templateUrl: './loader-feedbak.component.html',
-  styleUrls: ['./loader-feedbak.component.scss']
+  selector: 'app-loader-feedback',
+  templateUrl: './loader-feedback.component.html',
+  styleUrls: ['./loader-feedback.component.scss']
 })
 export class LoaderFeedbackComponent implements OnInit {
-
-  constructor() { }
+  isLoading: boolean;
+  constructor(private service: LoaderFeedbackService) { }
 
   ngOnInit() {
+    this.service.isLoading.subscribe(flag => {
+      this.isLoading = flag;
+    });
   }
 
 }

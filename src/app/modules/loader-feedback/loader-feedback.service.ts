@@ -15,7 +15,14 @@ export class LoaderFeedbackService {
     }
   }
   removeLoad(param: string){
-    this.list.
-    this.isLoading.next(false);
+    const index = this.list.indexOf(param);
+    if(index == -1){
+      return false;
+    }
+    this.list.splice(index, 1);
+    if(this.list.length == 0){
+      this.isLoading.next(false);
+    }
+    return true;
   }
 }
