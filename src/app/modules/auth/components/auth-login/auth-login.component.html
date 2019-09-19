@@ -1,0 +1,18 @@
+<div>
+  <h1>Login</h1>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    
+    <label for="cpf">CPF</label>
+    <input type="text" autocomplete="off" formControlName='cpf' id="cpf" appCpfMask maxlength="14">
+    <app-input-error [control]="form.get('cpf')"></app-input-error>
+    <br>
+  
+    <label for="password">SENHA</label>
+    <input autocomplete="off" type="password" formControlName='password' id="password" maxlength="9">
+    <app-input-error [control]="form.get('password')"></app-input-error>
+    <br>
+  
+    <button type="submit" class="btn" [disabled]="form.invalid">SALVAR</button>
+  
+  </form>
+</div>
