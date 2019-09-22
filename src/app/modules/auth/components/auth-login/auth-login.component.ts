@@ -26,17 +26,16 @@ export class AuthLoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() { console.log('on init')}
+  ngOnInit() { }
 
   save() {
-    console.log('chamou save');
+
     this.authService.authenticate(this.form.value)
       .then(res => {
-        console.log(res);
+        
       })
       .catch((error) => {
         this.message.show('Erro ao fazer login', 2000);
-        console.log('here1221', error);
       });
   }
 }
