@@ -2,11 +2,12 @@ import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 
 import { AuthLoginComponent } from './auth-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { of, Observable, throwError } from 'rxjs';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { UserInterceptor } from 'src/app/modules/shared/interceptors/user.interceptor';
 
 
 describe('AuthLoginComponent', () => {
@@ -25,7 +26,14 @@ describe('AuthLoginComponent', () => {
         HttpClientModule,
         SharedModule,
       ],
-      providers: [AuthService]
+      providers: [
+        AuthService,
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: UserInterceptor,
+          multi: true
+        }
+      ]
     })
       .compileComponents();
   }));
@@ -37,9 +45,13 @@ describe('AuthLoginComponent', () => {
     authSpy = spyOn(authService, 'authenticate').and.callFake(
       data => {
         if (data.cpf === '975.073.450-50' && data.password === '1234566') {
-          return of({ msgsucesso: 'msgsucesso aqui' }).toPromise();
+          return of(
+            { msgsucesso: 'msgsucesso aqui' }
+          ).toPromise();
         }
-        return throwError({ message: 'The user credentials were incorrect' }).toPromise();
+        return throwError(
+          { message: 'The user credentials were incorrect' }
+        ).toPromise();
       });
     messageSpy = spyOn(component.message, 'show').and.callThrough();
 
@@ -49,26 +61,26 @@ describe('AuthLoginComponent', () => {
   // isolated
   it('should call message error function',
     async (done) => {
-    // Arrange
-    const arrange = {
-      cpf: '975.073.450-50',
-      password: '123456'
-    };
+      // Arrange
+      const arrange = {
+        cpf: '975.073.450-50',
+        password: '123456'
+      };
 
-    // Act
-    component.form.setValue({
-      cpf: arrange.cpf,
-      password: arrange.password
+      // Act
+      component.form.setValue({
+        cpf: arrange.cpf,
+        password: arrange.password
+      });
+
+      await component.save();
+      await fixture.detectChanges();
+
+      // Assert
+      expect(messageSpy).toHaveBeenCalled();
+
+      done();
     });
-
-    await component.save();
-    await fixture.detectChanges();
-
-    // Assert
-    expect(messageSpy).toHaveBeenCalled();
-
-    done();
-  });
 
 
   // Shallow
@@ -100,5 +112,74 @@ describe('AuthLoginComponent', () => {
     expect(authSpy).toHaveBeenCalledWith(arrange);
     done();
   });
+
+  // Integration
+  it('should get formated values', async (done) => {
+    // Arrange
+    const arrange = {
+      input: {
+        cpf: '53249445053',
+        password: '1234566'
+      },
+      expect: {
+        cpf: '532.494.450-53',
+        password: '1234566'
+      }
+    };
+
+    const cpf = fixture.debugElement
+      .query(By.css('#cpf'))
+      .nativeElement;
+    const password = fixture.debugElement
+      .query(By.css('#password'))
+      .nativeElement;
+
+    cpf.value = arrange.input.cpf;
+    password.value = arrange.input.password;
+
+    // Act
+    await cpf.dispatchEvent(new Event('input'));
+    await password.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert
+    expect(component.form.value).toEqual(arrange.expect);
+    done();
+  });
+
+  // Integration with service
+  it('should authenticate user', async (done) => {
+    authSpy.and.callThrough();
+    // Arrange
+    const arrange = {
+      input: {
+        cpf: '975.073.450-50',
+        password: '1234566'
+      },
+      expect: {
+        id: 2,
+        name: 'Christian Mcguire',
+        cpf: '975.073.450-50',
+        email: 'chris@chris.com',
+        password: '1234566'
+      },
+    };
+
+    // Act
+    component.form.setValue({
+      cpf: arrange.input.cpf,
+      password: arrange.input.password
+    });
+    await component.save();
+    await fixture.detectChanges();
+
+    await authService.authenticate(arrange.input).then((user) => {
+
+      // Assert
+      expect(user).toEqual(arrange.expect);
+    });
+    done();
+  });
+
 
 });
