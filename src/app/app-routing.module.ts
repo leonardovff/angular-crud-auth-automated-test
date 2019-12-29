@@ -8,8 +8,12 @@ const routes: Routes = [
     loadChildren:  () => import('./modules/clients/clients.module').then(mod => mod.ClientsModule)
   },
   {
+    path: '',
+    loadChildren:  () => import('./modules/auth/auth.module').then(mod => mod.AuthModule)
+  },
+  {
     path: '**',
-    redirectTo: 'clients'
+    redirectTo: ''
   }
 ];
 

@@ -11,6 +11,7 @@ import { CpfMaskDirective } from './directives/cpf-mask.directive';
 import { PhoneMaskDirective } from './directives/phone-mask.directive';
 import { BirthDateMaskDirective } from './directives/birth-date-mask.directive';
 import { InputErrorComponent } from './components/input-error/input-error.component';
+import { UserInterceptor } from './interceptors/user.interceptor';
 
 
 @NgModule({
@@ -42,6 +43,11 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ClientInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserInterceptor,
       multi: true
     }
   ]
